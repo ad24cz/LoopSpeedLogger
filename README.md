@@ -1,6 +1,11 @@
 # LoopSpeedLogger
 This is an Arduino library that outputs the speed of main loop() as well as maximal, minimal, average values. On top of that it gives you the free memory reading... might make debugging easier
 
+# Installation
+For **PlatformIO** - clone this repo into the `lib/` directory in your project.
+
+For **Arduino IDE** - clone this repo into `~/Arduino/libraries/`.
+
 # Usage
 The library provides a simple static class `LoopSpeedLogger`. At the beginning of each loop, you use `LoopSpeedLogger::measure()`. Then you can use functions described below. Everything is measured in milliseconds.
 
