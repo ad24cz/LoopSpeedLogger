@@ -1,9 +1,9 @@
 #include "LoopSpeedLogger.h"
 #include <Arduino.h>
 
-int LoopSpeedLogger::lastRunStart,
+unsigned long LoopSpeedLogger::lastRunStart,
     LoopSpeedLogger::thisRunStart,
-    LoopSpeedLogger::minimalMillis = INT32_MAX,
+    LoopSpeedLogger::minimalMillis = (unsigned long) UINT64_MAX,
     LoopSpeedLogger::maximalMillis,
     LoopSpeedLogger::averageMillis,
     LoopSpeedLogger::count,
@@ -28,22 +28,22 @@ void LoopSpeedLogger::measure() {
     count++;
 }
 
-int LoopSpeedLogger::thisRun() {
+unsigned long LoopSpeedLogger::thisRun() {
     return millis() - thisRunStart;
 }
 
-int LoopSpeedLogger::lastRun() {
+unsigned long LoopSpeedLogger::lastRun() {
     return thisRunStart - lastRunStart;
 }
 
-int LoopSpeedLogger::minimal() {
+unsigned long LoopSpeedLogger::minimal() {
     return minimalMillis;
 }
 
-int LoopSpeedLogger::maximal() {
+unsigned long LoopSpeedLogger::maximal() {
     return maximalMillis;
 }
 
-int LoopSpeedLogger::average() {
+unsigned long LoopSpeedLogger::average() {
     return averageMillis;
 }

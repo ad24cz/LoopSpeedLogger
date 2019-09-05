@@ -5,21 +5,21 @@ class LoopSpeedLogger {
    public:
     static void measure();
 
-    static int thisRun();
+    static unsigned long thisRun();
 
-    static int lastRun();
+    static unsigned long lastRun();
 
-    static int minimal();
+    static unsigned long minimal();
 
-    static int maximal();
+    static unsigned long maximal();
     
-    static int average();
+    static unsigned long average();
 
    private:
     // make the class static
     LoopSpeedLogger() {}
 
-    static int lastRunStart, thisRunStart, maximalMillis, minimalMillis, averageMillis, count, setupTime;
+    static unsigned long lastRunStart, thisRunStart, maximalMillis, minimalMillis, averageMillis, count, setupTime;
 };
 
 #endif
